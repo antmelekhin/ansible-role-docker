@@ -1,0 +1,6 @@
+---
+- name: 'Include tasks for install Docker Engine'
+  ansible.builtin.include_tasks: 'install-{{ ansible_os_family }}.yml'
+
+- name: 'Include OS-specific tasks for Docker Engine'
+  ansible.builtin.import_tasks: 'configure.yml'

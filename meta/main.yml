@@ -1,0 +1,32 @@
+galaxy_info:
+  author: Melekhin Anton
+  role_name: docker
+  namespace: antmelekhin
+  description: An Ansible role for install Docker Engine.
+
+  license: MIT
+
+  min_ansible_version: '2.9'
+
+  platforms:
+    - name: Debian
+      versions:
+        - 'buster'
+        - 'bullseye'
+        - 'bookworm'
+    - name: EL
+      versions:
+        - '8'
+        - '9'
+    - name: Ubuntu
+      versions:
+        - 'bionic'
+        - 'focal'
+        - 'jammy'
+
+  galaxy_tags:
+    - docker
+    - docker-engine
+    - containers
+
+dependencies: []

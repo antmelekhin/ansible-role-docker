@@ -1,0 +1,41 @@
+---
+- name: 'Configure YUM/DNF repository and install Docker Engine package'
+  become: true
+  block:
+    - name: 'Ensure any conflicting packages are uninstalled'
+      ansible.builtin.package:
+        name:
+          - docker
+          - docker-client
+          - docker-client-latest
+          - docker-common
+          - docker-latest
+          - docker-latest-logrotate
+          - docker-logrotate
+          - docker-engine
+          - podman
+          - runc
+        state: absent
+
+    - name: 'Ensure dependencies are installed'
+      ansible.builtin.package:
+        name: yum-utils
+        state: present
+
+    - name: 'Add Docker Engine DNF/YUM repository'
+      ansible.builtin.template:
+        src: 'docker-ce.repo.j2'
+        dest: '/etc/yum.repos.d/docker-ce.repo'
+        owner: 'root'
+        group: 'root'
+        mode: 0644
+
+    - name: 'Install Docker Engine package'
+      ansible.builtin.package:
+        name:
+          - docker-ce
+          - docker-ce-cli
+          - containerd.io
+          - docker-buildx-plugin
+          - docker-compose-plugin
+        state: present

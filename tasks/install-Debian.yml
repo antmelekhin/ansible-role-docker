@@ -1,0 +1,45 @@
+---
+- name: 'Configure APT repository and install Docker Engine package'
+  become: true
+  block:
+    - name: 'Ensure any conflicting packages are uninstalled'
+      ansible.builtin.apt:
+        name:
+          - docker.io
+          - docker-doc
+          - docker-compose
+          - podman-docker
+          - containerd
+        state: absent
+
+    - name: 'Ensure dependencies are installed'
+      ansible.builtin.apt:
+        name:
+          - ca-certificates
+          - curl
+          - gnupg
+        update_cache: true
+        state: present
+
+    - name: 'Add Docker Engine APT key'
+      ansible.builtin.apt_key:
+        url: '{{ _docker_debian_repository_key_url }}'
+        keyring: '/etc/apt/keyrings/docker.gpg'
+        state: present
+      when: not ansible_check_mode
+
+    - name: 'Add Docker Engine APT repository'
+      ansible.builtin.apt_repository:
+        filename: docker
+        repo: '{{ _docker_debian_repository_mirror }}'
+        state: present
+
+    - name: 'Install Docker Engine packages'
+      ansible.builtin.apt:
+        name:
+          - docker-ce
+          - docker-ce-cli
+          - containerd.io
+          - docker-buildx-plugin
+          - docker-compose-plugin
+        state: present

@@ -1,0 +1,20 @@
+[docker-ce-{{ docker_repository_release_channel }}]
+name=Docker CE {{ docker_repository_release_channel | title }} - $basearch
+baseurl={{ _docker_redhat_repository_mirror }}/$basearch/{{ docker_repository_release_channel }}
+enabled=1
+gpgcheck=1
+gpgkey={{ _docker_redhat_repository_key_url }}
+
+[docker-ce-{{ docker_repository_release_channel }}-debuginfo]
+name=Docker CE {{ docker_repository_release_channel | title }} - Debuginfo $basearch
+baseurl={{ _docker_redhat_repository_mirror }}/debug-$basearch/{{ docker_repository_release_channel }}
+enabled=0
+gpgcheck=1
+gpgkey={{ _docker_redhat_repository_key_url }}
+
+[docker-ce-{{ docker_repository_release_channel }}-source]
+name=Docker CE {{ docker_repository_release_channel | title }} - Sources
+baseurl={{ _docker_redhat_repository_mirror }}/$releasever/source/{{ docker_repository_release_channel }}
+enabled=0
+gpgcheck=1
+gpgkey={{ _docker_redhat_repository_key_url }}
