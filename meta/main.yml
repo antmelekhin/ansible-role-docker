@@ -1,7 +1,7 @@
+---
 galaxy_info:
-  author: Melekhin Anton
+  author: antmelekhin
   role_name: docker
-  namespace: antmelekhin
   description: An Ansible role for install Docker Engine.
 
   license: MIT
