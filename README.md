@@ -30,6 +30,7 @@ Role Variables
   - `stable` (default)
   - `test`
 
+- `docker_version` The specific version of Docker Engine to install. By default, role install latest version.
 - `docker_users` A list of users who will be added to the docker group (default: `[]`).
 
 Dependencies
@@ -49,6 +50,23 @@ Example Playbook
 
     roles:
       - role: antmelekhin.docker
+  ```
+
+- Install `Docker Engine` v23.0.6:
+
+  ```yaml
+  ---
+  - name: 'Install Docker Engine v23.0.6'
+    hosts: all
+
+    roles:
+      - role: antmelekhin.docker
+        docker_version: '5:23.0.6-1~ubuntu.22.04~jammy'
+        when: ansible_distribution == 'Ubuntu' and ansible_distribution_version is version('22.04', '=')
+
+      - role: antmelekhin.docker
+        docker_version: '23.0.6'
+        when: ansible_os_family == 'RedHat' and ansible_distribution_major_version is version('8', '>=')
   ```
 
 License

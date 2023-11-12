@@ -13,3 +13,13 @@
             ansible_facts.services['docker.service'].state == 'active'
           - ansible_facts.services['docker.service'].status == 'enabled' or
             ansible_facts.services['docker.service'].status == 'enabled'
+
+    - name: 'Check current Docker Engine version'
+      ansible.builtin.command:
+        cmd: '/usr/bin/docker --version'
+      changed_when: false
+      register: _docker_version_check
+
+    - name: 'Version output'
+      ansible.builtin.debug:
+        var: _docker_version_check.stdout_lines[0]
