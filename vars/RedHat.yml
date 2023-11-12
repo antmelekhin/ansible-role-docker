@@ -1,0 +1,4 @@
+---
+_docker_repository_distribution: "{{ (ansible_distribution == 'Fedora') | ternary('fedora', 'centos') }}"
+_docker_repository_key_url: '{{ docker_repository_mirror }}/{{ _docker_repository_distribution }}/gpg'
+_docker_repository_mirror: '{{ docker_repository_mirror }}/{{ _docker_repository_distribution }}/$releasever'
