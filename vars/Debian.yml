@@ -1,0 +1,9 @@
+---
+_docker_architecture_map:
+  x86_64: 'amd64'
+  aarch64: 'arm64'
+
+_docker_architecture: '{{ _docker_architecture_map[ansible_architecture] | default(ansible_architecture) }}'
+
+_docker_repository_key_url: '{{ docker_repository_mirror }}/{{ ansible_distribution | lower }}/gpg'
+_docker_repository_mirror: '{{ docker_repository_mirror }}/{{ ansible_distribution | lower }} {{ ansible_distribution_release }} {{ docker_repository_release_channel }}'

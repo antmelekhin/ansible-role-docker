@@ -1,0 +1,3 @@
+{{ ansible_managed | comment }}
+
+deb [arch={{ _docker_architecture }} signed-by=/etc/apt/keyrings/docker.gpg] {{ _docker_repository_mirror }}
