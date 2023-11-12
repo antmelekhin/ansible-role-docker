@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/antmelekhin/ansible-role-docker/compare/v1.0.1...v1.1.0) (2023-11-12)
+
+
+### Features
+
+* add `docker_version` variable ([#3](https://github.com/antmelekhin/ansible-role-docker/issues/3)) ([dea362f](https://github.com/antmelekhin/ansible-role-docker/commit/dea362f97132a09ac0613eaec598fc08861957e7))
+
 ## [1.0.1](https://github.com/antmelekhin/ansible-role-docker/compare/v1.0.0...v1.0.1) (2023-11-12)
 
 
