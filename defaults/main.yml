@@ -2,4 +2,6 @@
 docker_repository_mirror: 'https://download.docker.com/linux'
 docker_repository_release_channel: 'stable'
 
+docker_version: ''
+
 docker_users: []

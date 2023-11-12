@@ -28,10 +28,11 @@
     - name: 'Install Docker Engine packages'
       ansible.builtin.apt:
         name:
-          - docker-ce
-          - docker-ce-cli
+          - "docker-ce{{ ('=' + docker_version) if (docker_version | length) else '' }}"
+          - "docker-ce-cli{{ ('=' + docker_version) if (docker_version | length) else '' }}"
           - containerd.io
           - docker-buildx-plugin
           - docker-compose-plugin
+        allow_downgrade: "{{ omit if ansible_version['full'] is version('2.12', '<') else true }}"
         update_cache: true
-        state: present
+        state: "{{ 'present' if (docker_version | length) else 'latest' }}"
