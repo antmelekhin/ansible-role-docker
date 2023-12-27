@@ -16,7 +16,7 @@
         mode: 0644
 
     - name: 'Install Docker Engine packages'
-      ansible.builtin.dnf:
+      ansible.builtin.yum:
         name:
           - "docker-ce{{ ('-' + docker_version) if (docker_version | length) else '' }}"
           - "docker-ce-cli{{ ('-' + docker_version) if (docker_version | length) else '' }}"
