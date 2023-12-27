@@ -1,3 +1,5 @@
+{{ ansible_managed | comment }}
+
 [docker-ce-{{ docker_repository_release_channel }}]
 name=Docker CE {{ docker_repository_release_channel | title }} - $basearch
 baseurl={{ _docker_yum_repository }}
