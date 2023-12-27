@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/antmelekhin/ansible-role-docker/compare/v1.2.0...v1.2.1) (2023-12-27)
+
+
+### Fixes
+
+* add `ansible_managed` comment to redhat repo template ([2a9ca44](https://github.com/antmelekhin/ansible-role-docker/commit/2a9ca4431781c8d29ec27c8427beae0bc94075f6))
+
 ## [1.2.0](https://github.com/antmelekhin/ansible-role-docker/compare/v1.1.0...v1.2.0) (2023-12-27)
 
 ### Improvements
