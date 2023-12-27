@@ -67,7 +67,7 @@ Example Playbook
 
       - role: antmelekhin.docker
         docker_version: '23.0.6'
-        when: ansible_os_family == 'RedHat' and ansible_distribution_major_version is version('8', '>=')
+        when: ansible_os_family == 'RedHat'
   ```
 
 License
