@@ -12,7 +12,7 @@
 
     - name: 'Add Docker Engine APT key'
       ansible.builtin.apt_key:
-        url: '{{ _docker_repository_key_url }}'
+        url: '{{ _docker_apt_repository_gpgkey }}'
         keyring: '/usr/share/keyrings/docker-archive-keyring.gpg'
         state: present
       when: not ansible_check_mode

@@ -1,5 +1,5 @@
 ---
-docker_repository_mirror: 'https://download.docker.com/linux'
+docker_repository_mirror_url: 'https://download.docker.com/linux'
 docker_repository_release_channel: 'stable'
 
 docker_version: ''

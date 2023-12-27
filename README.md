@@ -24,7 +24,7 @@ Requirements
 Role Variables
 --------------
 
-- `docker_repository_mirror` Mirror of `Docker` repository (default: `https://download.docker.com/linux`).
+- `docker_repository_mirror_url` Mirror of `Docker` repository (default: `https://download.docker.com/linux`).
 - `docker_repository_release_channel` `Docker`release channel.
 
   Available values:
