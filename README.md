@@ -13,6 +13,7 @@ Requirements
     - 11
     - 12
   - RHEL
+    - 7
     - 8
     - 9
   - Ubuntu
