@@ -8,6 +8,15 @@
         state: started
         enabled: true
 
+    - name: 'Configure Docker Engine daemon'
+      ansible.builtin.copy:
+        src: '{{ docker_daemon_options | to_nice_json }}'
+        dest: '/etc/docker/daemon.json'
+        owner: root
+        group: root
+        mode: 0644
+      notify: 'Restart Docker'
+
     - name: 'Ensure docker users are added to the docker group'
       user:
         name: '{{ _docker_user }}'

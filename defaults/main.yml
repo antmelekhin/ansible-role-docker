@@ -4,4 +4,6 @@ docker_repository_release_channel: 'stable'
 
 docker_version: ''
 
+docker_daemon_options: {}
+
 docker_users: []
