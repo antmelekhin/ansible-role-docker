@@ -32,6 +32,7 @@ Role Variables
   - `test`
 
 - `docker_version` The specific version of Docker Engine to install. By default, role install latest version.
+- `docker_daemon_options` A map of Docker daemon configuration options (default: `{}`).
 - `docker_users` A list of users who will be added to the docker group (default: `[]`).
 
 Dependencies
@@ -51,6 +52,22 @@ Example Playbook
 
     roles:
       - role: antmelekhin.docker
+  ```
+
+- Install `Docker Engine` and setup the DNS server for all docker containers:
+
+  ```yaml
+  ---
+  - name: 'Install Docker Engine'
+    hosts: all
+
+    roles:
+      - role: antmelekhin.docker
+        docker_daemon_options:
+          dns:
+            - '8.8.8.8'
+          dns-search:
+            - 'example.com'
   ```
 
 - Install `Docker Engine` v23.0.6:
