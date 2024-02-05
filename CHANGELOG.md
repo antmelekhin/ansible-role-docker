@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/antmelekhin/ansible-role-docker/compare/v1.2.1...v1.3.0) (2024-02-05)
+
+
+### Features
+
+* add docker daemon options ([#5](https://github.com/antmelekhin/ansible-role-docker/issues/5)) ([3f3889a](https://github.com/antmelekhin/ansible-role-docker/commit/3f3889a16a30bb1cf4f54ffb0a82d6add3220d96))
+
 ## [1.2.1](https://github.com/antmelekhin/ansible-role-docker/compare/v1.2.0...v1.2.1) (2023-12-27)
 
 
