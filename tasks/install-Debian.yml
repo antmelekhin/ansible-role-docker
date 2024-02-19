@@ -1,5 +1,5 @@
 ---
-- name: 'Configure APT repository and install Docker Engine package'
+- name: 'Configure APT repository and install Docker Engine packages'
   become: true
   block:
     - name: 'Ensure dependencies are installed'
@@ -17,7 +17,7 @@
         state: present
       when: not ansible_check_mode
 
-    - name: 'Add Docker Engine APT repository'
+    - name: 'Add Docker repository APT key'
       ansible.builtin.template:
         src: 'docker.list.j2'
         dest: '/etc/apt/sources.list.d/docker.list'
@@ -30,7 +30,6 @@
         name:
           - "docker-ce{{ ('=' + docker_version) if (docker_version | length) else '' }}"
           - "docker-ce-cli{{ ('=' + docker_version) if (docker_version | length) else '' }}"
-          - containerd.io
           - docker-buildx-plugin
           - docker-compose-plugin
         allow_downgrade: "{{ omit if ansible_version['full'] is version('2.12', '<') else true }}"
