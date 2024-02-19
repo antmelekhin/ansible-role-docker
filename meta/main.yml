@@ -2,7 +2,7 @@
 galaxy_info:
   author: antmelekhin
   role_name: docker
-  description: An Ansible role for install Docker Engine.
+  description: An Ansible role to install and configure Docker Engine.
 
   license: MIT
 

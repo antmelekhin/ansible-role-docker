@@ -1,5 +1,5 @@
 ---
-- name: 'Configure YUM/DNF repository and install Docker Engine package'
+- name: 'Configure YUM/DNF repository and install Docker Engine packages'
   become: true
   block:
     - name: 'Ensure dependencies are installed'
@@ -7,7 +7,7 @@
         name: yum-utils
         state: present
 
-    - name: 'Add Docker Engine DNF/YUM repository'
+    - name: 'Add Docker DNF/YUM repository'
       ansible.builtin.template:
         src: 'docker.repo.j2'
         dest: '/etc/yum.repos.d/docker.repo'
@@ -20,7 +20,6 @@
         name:
           - "docker-ce{{ ('-' + docker_version) if (docker_version | length) else '' }}"
           - "docker-ce-cli{{ ('-' + docker_version) if (docker_version | length) else '' }}"
-          - containerd.io
           - docker-buildx-plugin
           - docker-compose-plugin
         allow_downgrade: "{{ omit if ansible_version['full'] is version('2.12', '<') else true }}"

@@ -1,7 +1,7 @@
 Docker
 ======
 
-An Ansible role for install Docker Engine.
+An Ansible role to install and configure Docker Engine.
 
 Requirements
 ------------

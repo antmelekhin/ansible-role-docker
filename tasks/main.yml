@@ -7,8 +7,8 @@
   loop_control:
     loop_var: distribution
 
-- name: 'Include tasks for install Docker Engine'
+- name: 'Include tasks to install Docker Engine'
   ansible.builtin.include_tasks: 'install-{{ ansible_os_family }}.yml'
 
-- name: 'Include OS-specific tasks for Docker Engine'
+- name: 'Include tasks to configure Docker Engine'
   ansible.builtin.import_tasks: 'configure.yml'
