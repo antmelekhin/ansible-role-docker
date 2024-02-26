@@ -23,3 +23,12 @@
     - name: 'Version output'
       ansible.builtin.debug:
         var: _docker_version_check.stdout_lines[0]
+
+    - name: 'Run hello-world container'
+      shell: docker run --rm hello-world
+      changed_when: false
+      register: _hello_world
+
+    - name: 'Hello world output'
+      ansible.builtin.debug:
+        var: _hello_world.stdout_lines
