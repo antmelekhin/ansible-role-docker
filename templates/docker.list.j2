@@ -1,2 +1,2 @@
 {{ ansible_managed | comment }}
-deb [arch={{ _docker_architecture }} signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] {{ _docker_apt_repository }}
+deb [arch={{ _docker_architecture }} signed-by={{ _docker_apt_local_gpgkey }}] {{ _docker_apt_repository }}
