@@ -4,8 +4,8 @@
   block:
     - name: 'Ensure dependencies are installed'
       ansible.builtin.package:
-        name: yum-utils
-        state: present
+        name: 'yum-utils'
+        state: 'present'
 
     - name: 'Add Docker DNF/YUM repository'
       ansible.builtin.template:
@@ -20,8 +20,8 @@
         name:
           - "docker-ce{{ ('-' + docker_version) if (docker_version | length) else '' }}"
           - "docker-ce-cli{{ ('-' + docker_version) if (docker_version | length) else '' }}"
-          - docker-buildx-plugin
-          - docker-compose-plugin
-        allow_downgrade: "{{ omit if ansible_version['full'] is version('2.12', '<') else true }}"
+          - 'docker-buildx-plugin'
+          - 'docker-compose-plugin'
+        allow_downgrade: true
         update_cache: true
         state: "{{ 'present' if (docker_version | length) else 'latest' }}"

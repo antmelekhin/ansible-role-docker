@@ -24,14 +24,15 @@ Requirements
 Role Variables
 --------------
 
+- `docker_version` The specific version of Docker Engine to install. By default, role install latest version.
 - `docker_repository_mirror_url` Mirror of `Docker` repository (default: `https://download.docker.com/linux`).
+- `docker_repository_gpgkey_url` URL to `Docker` GPG public key file (see default values in `vars/*.yml`).
 - `docker_repository_release_channel` `Docker`release channel.
 
   Available values:
   - `stable` (default)
   - `test`
 
-- `docker_version` The specific version of Docker Engine to install. By default, role install latest version.
 - `docker_daemon_options` A map of Docker daemon configuration options (default: `{}`).
 - `docker_users` A list of users who will be added to the docker group (default: `[]`).
 

@@ -5,16 +5,16 @@
     - name: 'Ensure dependencies are installed'
       ansible.builtin.apt:
         name:
-          - ca-certificates
-          - gnupg
+          - 'ca-certificates'
+          - 'gnupg'
         update_cache: true
-        state: present
+        state: 'present'
 
     - name: 'Add Docker Engine APT key'
       ansible.builtin.apt_key:
-        url: '{{ _docker_apt_repository_gpgkey }}'
-        keyring: '{{ _docker_apt_local_gpgkey }}'
-        state: present
+        url: '{{ docker_repository_gpgkey_url }}'
+        keyring: '{{ _docker_local_gpgkey_path }}'
+        state: 'present'
       when: not ansible_check_mode
 
     - name: 'Add Docker repository APT key'
@@ -30,8 +30,8 @@
         name:
           - "docker-ce{{ ('=' + docker_version) if (docker_version | length) else '' }}"
           - "docker-ce-cli{{ ('=' + docker_version) if (docker_version | length) else '' }}"
-          - docker-buildx-plugin
-          - docker-compose-plugin
-        allow_downgrade: "{{ omit if ansible_version['full'] is version('2.12', '<') else true }}"
+          - 'docker-buildx-plugin'
+          - 'docker-compose-plugin'
+        allow_downgrade: true
         update_cache: true
         state: "{{ 'present' if (docker_version | length) else 'latest' }}"
