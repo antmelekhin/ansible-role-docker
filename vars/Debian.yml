@@ -5,7 +5,7 @@ _docker_architecture_map:
 
 _docker_architecture: '{{ _docker_architecture_map[ansible_architecture] | default(ansible_architecture) }}'
 
-_docker_apt_repository_gpgkey: '{{ docker_repository_mirror_url }}/{{ ansible_distribution | lower }}/gpg'
-_docker_apt_local_gpgkey: '/usr/share/keyrings/docker-archive-keyring.gpg'
+_docker_repository_gpgkey_url: '{{ docker_repository_mirror_url }}/{{ ansible_distribution | lower }}/gpg'
+_docker_local_gpgkey_path: '/usr/share/keyrings/docker-archive-keyring.gpg'
 
-_docker_apt_repository: '{{ docker_repository_mirror_url }}/{{ ansible_distribution | lower }} {{ ansible_distribution_release }} {{ docker_repository_release_channel }}'
+_docker_repository: '{{ docker_repository_mirror_url }}/{{ ansible_distribution | lower }} {{ ansible_distribution_release }} {{ docker_repository_release_channel }}'

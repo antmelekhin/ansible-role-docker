@@ -1,6 +1,7 @@
 ---
 docker_version: ''
 docker_repository_mirror_url: 'https://download.docker.com/linux'
+docker_repository_gpgkey_url: '{{ _docker_repository_gpgkey_url }}'
 docker_repository_release_channel: 'stable'
 
 docker_daemon_options: {}
