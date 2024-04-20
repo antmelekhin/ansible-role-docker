@@ -1,7 +1,7 @@
 ---
 - name: 'Restart Docker'
   ansible.builtin.systemd:
-    name: docker
-    state: restarted
+    name: 'docker'
+    state: 'restarted'
   when: not ansible_check_mode
   become: true

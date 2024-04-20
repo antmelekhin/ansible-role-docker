@@ -4,16 +4,16 @@
   block:
     - name: 'Ensure Docker Engine is running and enabled at boot'
       ansible.builtin.systemd:
-        name: docker
-        state: started
+        name: 'docker'
+        state: 'started'
         enabled: true
 
     - name: 'Configure Docker Engine daemon'
       ansible.builtin.copy:
         content: '{{ docker_daemon_options | to_nice_json }}'
         dest: '/etc/docker/daemon.json'
-        owner: root
-        group: root
+        owner: 'root'
+        group: 'root'
         mode: 0644
       notify: 'Restart Docker'
       when: docker_daemon_options.keys() | length
@@ -21,7 +21,7 @@
     - name: 'Ensure docker users are added to the docker group'
       user:
         name: '{{ _docker_user }}'
-        groups: docker
+        groups: 'docker'
         append: true
       loop: '{{ docker_users }}'
       loop_control:
