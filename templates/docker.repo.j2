@@ -5,4 +5,4 @@ name=Docker CE {{ docker_repository_release_channel | title }} - $basearch
 baseurl={{ _docker_repository }}
 enabled=1
 gpgcheck=1
-gpgkey={{ _docker_repository_gpgkey_url }}
+gpgkey={{ docker_repository_gpgkey_url }}
