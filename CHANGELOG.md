@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.2](https://github.com/antmelekhin/ansible-role-docker/compare/v1.3.1...v1.3.2) (2024-04-20)
+
+
+### Fixes
+
+* gpgkey value for redhat-based distros ([dedfe39](https://github.com/antmelekhin/ansible-role-docker/commit/dedfe399faa64c10237c1d8ac2d0129e68163d1a))
+
 ## [1.3.1](https://github.com/antmelekhin/ansible-role-docker/compare/v1.3.0...v1.3.1) (2024-04-20)
 
 
