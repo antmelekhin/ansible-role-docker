@@ -1,5 +1,31 @@
 # Changelog
 
+## [1.3.1](https://github.com/antmelekhin/ansible-role-docker/compare/v1.3.0...v1.3.1) (2024-04-20)
+
+
+### Code Refactoring
+
+* update variable names, rm conditional expression, quote strings and rm loop for `include_vars` ([#8](https://github.com/antmelekhin/ansible-role-docker/issues/8)) ([7640f97](https://github.com/antmelekhin/ansible-role-docker/commit/7640f97fc3b25851dd89f86135904d32cfdbac87))
+
+
+### Continuous Integration
+
+* update release rules ([859c958](https://github.com/antmelekhin/ansible-role-docker/commit/859c958ad32976d21c7eff6d6490de1dbfb458c8))
+* update workflows ([f4221f3](https://github.com/antmelekhin/ansible-role-docker/commit/f4221f32540cc5145dc44b2305c443a29f14f612))
+
+
+### Styles
+
+* add `_docker_apt_local_gpgkey` variable ([09d5432](https://github.com/antmelekhin/ansible-role-docker/commit/09d543246545ec64458b8e8e0f897872f7c31f4a))
+* minor changes ([e6fa76c](https://github.com/antmelekhin/ansible-role-docker/commit/e6fa76c005f6408665709fbefccaf0a6a0b74bb5))
+* rename some tasks, update description, delete `containerd` from package list ([#6](https://github.com/antmelekhin/ansible-role-docker/issues/6)) ([497987e](https://github.com/antmelekhin/ansible-role-docker/commit/497987eb88df30f8c8d2ad32da1c1a8343b30ba8))
+* revert empty line after ansible comment ([cb71ee5](https://github.com/antmelekhin/ansible-role-docker/commit/cb71ee5973fc23ed7073eef4360c3e966aab6148))
+
+
+### Tests
+
+* added hello-world container run test ([#7](https://github.com/antmelekhin/ansible-role-docker/issues/7)) ([5a2047f](https://github.com/antmelekhin/ansible-role-docker/commit/5a2047f34c8a149fcd2d776bd295015273a8b0f0))
+
 ## [1.3.0](https://github.com/antmelekhin/ansible-role-docker/compare/v1.2.1...v1.3.0) (2024-02-05)
 
 
