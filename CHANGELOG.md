@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.3](https://github.com/antmelekhin/ansible-role-docker/compare/v1.3.2...v1.3.3) (2024-04-22)
+
+
+### Fixes
+
+* add missing fqcn for modules ([e41d4fa](https://github.com/antmelekhin/ansible-role-docker/commit/e41d4fa64b94d89ff292fa24e5d125a3f2d12300))
+
 ## [1.3.2](https://github.com/antmelekhin/ansible-role-docker/compare/v1.3.1...v1.3.2) (2024-04-20)
 
 
