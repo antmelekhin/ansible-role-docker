@@ -19,7 +19,7 @@
       when: docker_daemon_options.keys() | length
 
     - name: 'Ensure docker users are added to the docker group'
-      user:
+      ansible.builtin.user:
         name: '{{ _docker_user }}'
         groups: 'docker'
         append: true

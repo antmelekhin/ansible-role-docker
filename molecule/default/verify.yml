@@ -25,7 +25,8 @@
         var: _docker_version_check.stdout_lines[0]
 
     - name: 'Run hello-world container'
-      shell: docker run --rm hello-world
+      ansible.builtin.command:
+        cmd: 'docker run --rm hello-world'
       changed_when: false
       register: _hello_world
 
