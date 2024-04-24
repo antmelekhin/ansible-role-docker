@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.4](https://github.com/antmelekhin/ansible-role-docker/compare/v1.3.3...v1.3.4) (2024-04-24)
+
+
+### Fixes
+
+* **test:** run linters in its own workflow ([#9](https://github.com/antmelekhin/ansible-role-docker/issues/9)) ([7c9e46d](https://github.com/antmelekhin/ansible-role-docker/commit/7c9e46d772fa2fb835eae476cab25affbb78f1b8))
+
 ## [1.3.3](https://github.com/antmelekhin/ansible-role-docker/compare/v1.3.2...v1.3.3) (2024-04-22)
 
 
