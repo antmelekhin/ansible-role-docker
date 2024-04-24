@@ -27,7 +27,7 @@ galaxy_info:
 
   galaxy_tags:
     - docker
-    - docker-engine
+    - engine
     - containers
 
 dependencies: []
