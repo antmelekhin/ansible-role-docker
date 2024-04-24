@@ -29,6 +29,7 @@ jobs:
 
   molecule:
     name: 'Molecule'
+    needs: lint
     runs-on: ubuntu-latest
     strategy:
       matrix:
