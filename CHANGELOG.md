@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.6](https://github.com/antmelekhin/ansible-role-docker/compare/v1.3.5...v1.3.6) (2024-04-25)
+
+
+### Fixes
+
+* fixed task name ([46369e2](https://github.com/antmelekhin/ansible-role-docker/commit/46369e245b0877c39874fa94959ce4873f90f3de))
+
 ## [1.3.5](https://github.com/antmelekhin/ansible-role-docker/compare/v1.3.4...v1.3.5) (2024-04-25)
 
 
