@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.5](https://github.com/antmelekhin/ansible-role-docker/compare/v1.3.4...v1.3.5) (2024-04-25)
+
+
+### Documentation
+
+* **README:** fixed examples view ([a3a678f](https://github.com/antmelekhin/ansible-role-docker/commit/a3a678f8618604cfb991c680951f55288461f639))
+
+
+### Fixes
+
+* fixed running a role in `check_mode` ([de59149](https://github.com/antmelekhin/ansible-role-docker/commit/de5914931bea2fe5826773b49cb418cb07e3cde7))
+
 ## [1.3.4](https://github.com/antmelekhin/ansible-role-docker/compare/v1.3.3...v1.3.4) (2024-04-24)
 
 
