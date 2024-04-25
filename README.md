@@ -44,49 +44,49 @@ None.
 Example Playbook
 ----------------
 
-- Install `Docker Engine`:
+Install `Docker Engine`:
 
-  ```yaml
-  ---
-  - name: 'Install Docker Engine'
-    hosts: all
+```yaml
+---
+- name: 'Install Docker Engine'
+  hosts: all
 
-    roles:
-      - role: antmelekhin.docker
-  ```
+  roles:
+    - role: antmelekhin.docker
+```
 
-- Install `Docker Engine` and setup the DNS server for all docker containers:
+Install `Docker Engine` and setup the DNS server for all docker containers:
 
-  ```yaml
-  ---
-  - name: 'Install Docker Engine'
-    hosts: all
+```yaml
+---
+- name: 'Install Docker Engine'
+  hosts: all
 
-    roles:
-      - role: antmelekhin.docker
-        docker_daemon_options:
-          dns:
-            - '8.8.8.8'
-          dns-search:
-            - 'example.com'
-  ```
+  roles:
+    - role: antmelekhin.docker
+      docker_daemon_options:
+        dns:
+          - '8.8.8.8'
+        dns-search:
+          - 'example.com'
+```
 
-- Install `Docker Engine` v23.0.6:
+Install `Docker Engine` v23.0.6:
 
-  ```yaml
-  ---
-  - name: 'Install Docker Engine v23.0.6'
-    hosts: all
+```yaml
+---
+- name: 'Install Docker Engine v23.0.6'
+  hosts: all
 
-    roles:
-      - role: antmelekhin.docker
-        docker_version: '5:23.0.6-1~ubuntu.22.04~jammy'
-        when: ansible_distribution == 'Ubuntu' and ansible_distribution_version is version('22.04', '=')
+  roles:
+    - role: antmelekhin.docker
+      docker_version: '5:23.0.6-1~ubuntu.22.04~jammy'
+      when: ansible_distribution == 'Ubuntu' and ansible_distribution_version is version('22.04', '=')
 
-      - role: antmelekhin.docker
-        docker_version: '23.0.6'
-        when: ansible_os_family == 'RedHat'
-  ```
+    - role: antmelekhin.docker
+      docker_version: '23.0.6'
+      when: ansible_os_family == 'RedHat'
+```
 
 License
 -------
