@@ -7,6 +7,7 @@
         name: 'docker'
         state: 'started'
         enabled: true
+      when: not ansible_check_mode
 
     - name: 'Configure Docker Engine daemon'
       ansible.builtin.copy:

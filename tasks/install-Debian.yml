@@ -9,13 +9,13 @@
           - 'gnupg'
         update_cache: true
         state: 'present'
+      when: not ansible_check_mode
 
     - name: 'Add Docker Engine APT key'
       ansible.builtin.apt_key:
         url: '{{ docker_repository_gpgkey_url }}'
         keyring: '{{ _docker_local_gpgkey_path }}'
         state: 'present'
-      when: not ansible_check_mode
 
     - name: 'Add Docker repository APT key'
       ansible.builtin.template:
@@ -35,3 +35,4 @@
         allow_downgrade: true
         update_cache: true
         state: "{{ 'present' if (docker_version | length) else 'latest' }}"
+      when: not ansible_check_mode
