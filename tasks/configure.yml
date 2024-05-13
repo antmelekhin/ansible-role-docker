@@ -2,14 +2,14 @@
 - name: 'Configure and start Docker Engine'
   become: true
   block:
-    - name: 'Ensure Docker Engine is running and enabled at boot'
+    - name: 'Ensure the Docker Engine is running and enabled at boot'
       ansible.builtin.systemd:
         name: 'docker'
         state: 'started'
         enabled: true
       when: not ansible_check_mode
 
-    - name: 'Configure Docker Engine daemon'
+    - name: 'Configure the Docker Engine daemon'
       ansible.builtin.copy:
         content: '{{ docker_daemon_options | to_nice_json }}'
         dest: '/etc/docker/daemon.json'

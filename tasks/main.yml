@@ -1,5 +1,5 @@
 ---
-- name: 'Include OS-specific Docker Engine variables'
+- name: 'Include the Docker Engine OS-specific variables'
   ansible.builtin.include_vars: '{{ ansible_os_family }}.yml'
 
 - name: 'Include tasks to install Docker Engine'
