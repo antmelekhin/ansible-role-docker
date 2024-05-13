@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.3.7](https://github.com/antmelekhin/ansible-role-docker/compare/v1.3.6...v1.3.7) (2024-05-13)
+
+
+### Documentation
+
+* **README:** update variables documentation ([b799aaa](https://github.com/antmelekhin/ansible-role-docker/commit/b799aaaffb002d93bc126400e4b9bbc1c5e0a802))
+
+
+### Styles
+
+* add newline to end of file ([da16933](https://github.com/antmelekhin/ansible-role-docker/commit/da1693323fee4e4082121722dad523f8a4f0a7d2))
+* fix loop var ([9ac44b3](https://github.com/antmelekhin/ansible-role-docker/commit/9ac44b31b41dedeba48d2c861e667f775ed9c3a4))
+* rename tasks ([ad3cc67](https://github.com/antmelekhin/ansible-role-docker/commit/ad3cc67799aaa88924c2e0f6dfc5bdaa77ccc95c))
+
 ## [1.3.6](https://github.com/antmelekhin/ansible-role-docker/compare/v1.3.5...v1.3.6) (2024-04-25)
 
 
