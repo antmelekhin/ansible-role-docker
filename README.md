@@ -1,7 +1,7 @@
 Docker
 ======
 
-An Ansible role to install and configure Docker Engine.
+An Ansible role to install and configure [Docker Engine](https://docs.docker.com/engine/).
 
 Requirements
 ------------
@@ -24,16 +24,20 @@ Requirements
 Role Variables
 --------------
 
-- `docker_version` The specific version of Docker Engine to install. By default, role install latest version.
-- `docker_repository_mirror_url` Mirror of `Docker` repository (default: `https://download.docker.com/linux`).
-- `docker_repository_gpgkey_url` URL to `Docker` GPG public key file (see default values in `vars/*.yml`).
-- `docker_repository_release_channel` `Docker`release channel.
+Variables used to install Docker Engine:
+
+- `docker_version` The version of the Docker Engine package. By default, Docker Engine is installed with the latest available version.
+- `docker_repository_mirror_url` Docker repository mirror (default: `https://download.docker.com/linux`).
+- `docker_repository_gpgkey_url` URL to Docker repository GPG key file (see default values in `vars/*.yml`).
+- `docker_repository_release_channel` Docker repository release channel.
 
   Available values:
   - `stable` (default)
   - `test`
 
-- `docker_daemon_options` A map of Docker daemon configuration options (default: `{}`).
+Variables used to configure Docker Engine:
+
+- `docker_daemon_options` A map of Docker Engine daemon configuration options (default: `{}`).
 - `docker_users` A list of users who will be added to the docker group (default: `[]`).
 
 Dependencies
@@ -44,7 +48,7 @@ None.
 Example Playbook
 ----------------
 
-Install `Docker Engine`:
+Install Docker Engine:
 
 ```yaml
 ---
@@ -55,7 +59,7 @@ Install `Docker Engine`:
     - role: antmelekhin.docker
 ```
 
-Install `Docker Engine` and setup the DNS server for all docker containers:
+Install Docker Engine and configure a DNS server for all Docker containers:
 
 ```yaml
 ---
@@ -71,7 +75,7 @@ Install `Docker Engine` and setup the DNS server for all docker containers:
           - 'example.com'
 ```
 
-Install `Docker Engine` v23.0.6:
+Install Docker Engine v23.0.6:
 
 ```yaml
 ---

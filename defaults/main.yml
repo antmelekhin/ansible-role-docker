@@ -1,9 +1,12 @@
 ---
+# Install Docker Engine using the Docker repository
 docker_version: ''
 docker_repository_mirror_url: 'https://download.docker.com/linux'
 docker_repository_gpgkey_url: '{{ _docker_repository_gpgkey_url }}'
 docker_repository_release_channel: 'stable'
 
+# Configure Docker Engine daemon
 docker_daemon_options: {}
 
+# Add users to the docker group
 docker_users: []
