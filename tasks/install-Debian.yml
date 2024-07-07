@@ -29,6 +29,7 @@
     - name: 'Debian | Install the Docker Engine packages'
       ansible.builtin.apt:
         name:
+          - 'containerd.io'
           - "docker-ce{{ ('=' + docker_version) if (docker_version | length) else '' }}"
           - "docker-ce-cli{{ ('=' + docker_version) if (docker_version | length) else '' }}"
           - 'docker-buildx-plugin'

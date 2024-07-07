@@ -11,8 +11,14 @@
         that:
           - ansible_facts.services['docker.service'].state == 'running' or
             ansible_facts.services['docker.service'].state == 'active'
-          - ansible_facts.services['docker.service'].status == 'enabled' or
-            ansible_facts.services['docker.service'].status == 'enabled'
+          - ansible_facts.services['docker.service'].status == 'enabled'
+
+    - name: 'Assert that Containerd service is enabled and running'
+      ansible.builtin.assert:
+        that:
+          - ansible_facts.services['containerd.service'].state == 'running' or
+            ansible_facts.services['containerd.service'].state == 'active'
+          - ansible_facts.services['containerd.service'].status == 'enabled'
 
     - name: 'Check the current Docker Engine version'
       ansible.builtin.command:

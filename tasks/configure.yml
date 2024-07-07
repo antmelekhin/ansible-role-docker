@@ -9,6 +9,13 @@
         enabled: true
       when: not ansible_check_mode
 
+    - name: 'Ensure Containerd is running and enabled at boot'
+      ansible.builtin.systemd:
+        name: 'containerd'
+        state: 'started'
+        enabled: true
+      when: not ansible_check_mode
+
     - name: 'Configure the Docker Engine daemon'
       ansible.builtin.copy:
         content: '{{ docker_daemon_options | to_nice_json }}'
