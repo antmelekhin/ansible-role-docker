@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.4.0](https://github.com/antmelekhin/ansible-role-docker/compare/v1.3.7...v1.4.0) (2024-07-07)
+
+
+### Features
+
+* add fedora support ([bd766ec](https://github.com/antmelekhin/ansible-role-docker/commit/bd766ec502ca60b7fa3fba6e7f71b5a69d0d82e6))
+
+
+### Fixes
+
+* revert containerd package ([6a38123](https://github.com/antmelekhin/ansible-role-docker/commit/6a38123dc4a259ab3632fbe79f4c29aaf3e9acb6))
+
+
+### Styles
+
+* update common role style ([#10](https://github.com/antmelekhin/ansible-role-docker/issues/10)) ([c24e442](https://github.com/antmelekhin/ansible-role-docker/commit/c24e442c49757777f005309cca92b9b6c65ae717))
+
 ## [1.3.7](https://github.com/antmelekhin/ansible-role-docker/compare/v1.3.6...v1.3.7) (2024-05-13)
 
 
