@@ -1,4 +1,12 @@
 ---
+_docker_conflicting_packages:
+  - 'containerd'
+  - 'docker.io'
+  - 'docker-compose'
+  - 'docker-doc'
+  - 'podman-docker'
+  - 'runc'
+
 _docker_architecture_map:
   x86_64: 'amd64'
   aarch64: 'arm64'

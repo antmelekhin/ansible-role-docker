@@ -2,6 +2,11 @@
 - name: 'Debian | Configure the repository and install the Docker Engine packages'
   become: true
   block:
+    - name: 'Debian | Remove the conflicting Docker Engine packages'
+      ansible.builtin.apt:
+        name: '{{ _docker_conflicting_packages }}'
+        state: 'absent'
+
     - name: 'Debian | Ensure the dependencies are installed'
       ansible.builtin.apt:
         name:
