@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/antmelekhin/ansible-role-docker/compare/v1.4.0...v1.4.1) (2024-07-08)
+
+
+### Fixes
+
+* revert task that removes conflicting packages ([5c06302](https://github.com/antmelekhin/ansible-role-docker/commit/5c063024143eb2c390bcfe76a8742838a780d86a))
+
 ## [1.4.0](https://github.com/antmelekhin/ansible-role-docker/compare/v1.3.7...v1.4.0) (2024-07-07)
 
 
