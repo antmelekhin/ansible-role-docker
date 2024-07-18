@@ -2,7 +2,7 @@
 
 [docker-ce-{{ docker_repository_release_channel }}]
 name=Docker CE {{ docker_repository_release_channel | title }} - $basearch
-baseurl={{ _docker_repository }}
+baseurl={{ _docker_redhat_repository }}
 enabled=1
 gpgcheck=1
-gpgkey={{ docker_repository_gpgkey_url }}
+gpgkey={{ _docker_redhat_repository_gpgkey_url }}
