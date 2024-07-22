@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.5.1](https://github.com/antmelekhin/ansible-role-docker/compare/v1.5.0...v1.5.1) (2024-07-22)
+
+
+### Fixes
+
+* revert `docker_repository_mirror_url` variable ([6025d7f](https://github.com/antmelekhin/ansible-role-docker/commit/6025d7fa25bb073289887b56200e82880db0a435))
+
+
+### Tests
+
+* clean version output in the default scenario ([11c0560](https://github.com/antmelekhin/ansible-role-docker/commit/11c05603ac7c1b16c4bdf9ef8dd3bef70a161d80))
+
 ## [1.5.0](https://github.com/antmelekhin/ansible-role-docker/compare/v1.4.1...v1.5.0) (2024-07-22)
 
 
