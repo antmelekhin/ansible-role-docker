@@ -1,0 +1,12 @@
+---
+_docker_conflicting_packages:
+  - 'containerd'
+  - 'docker.io'
+  - 'docker-compose'
+  - 'docker-doc'
+  - 'podman-docker'
+  - 'runc'
+
+_docker_repository_gpgkey_url: '{{ docker_repository_mirror }}/{{ ansible_distribution | lower }}/gpg'
+_docker_repository_gpgkey_keyring: '/usr/share/keyrings/docker-archive-keyring.gpg'
+_docker_repository: '{{ docker_repository_mirror }}/{{ ansible_distribution | lower }} {{ ansible_distribution_release }} {{ docker_repository_release_channel }}'

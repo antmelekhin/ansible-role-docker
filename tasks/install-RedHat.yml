@@ -4,7 +4,7 @@
   block:
     - name: 'RedHat | Remove the conflicting Docker Engine packages'
       ansible.builtin.package:
-        name: '{{ _docker_redhat_conflicting_packages }}'
+        name: '{{ _docker_conflicting_packages }}'
         state: 'absent'
 
     - name: 'RedHat | Ensure the dependencies are installed'

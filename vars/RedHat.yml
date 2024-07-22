@@ -1,0 +1,17 @@
+---
+_docker_conflicting_packages:
+  - 'docker'
+  - 'docker-client'
+  - 'docker-client-latest'
+  - 'docker-common'
+  - 'docker-engine'
+  - 'docker-engine-selinux.noarch'
+  - 'docker-latest'
+  - 'docker-latest-logrotate'
+  - 'docker-logrotate'
+  - 'docker-selinux.noarch'
+  - 'podman'
+  - 'runc'
+
+_docker_repository_gpgkey_url: "{{ docker_repository_mirror }}/{{ (ansible_distribution == 'Fedora') | ternary('fedora', 'centos') }}/gpg"
+_docker_repository: "{{ docker_repository_mirror }}/{{ (ansible_distribution == 'Fedora') | ternary('fedora', 'centos') }}/$releasever/$basearch/{{ docker_repository_release_channel }}"
