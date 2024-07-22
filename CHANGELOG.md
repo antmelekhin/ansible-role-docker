@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/antmelekhin/ansible-role-docker/compare/v1.4.1...v1.5.0) (2024-07-22)
+
+
+### Features
+
+* add `meta/argument_specs.yml` ([#11](https://github.com/antmelekhin/ansible-role-docker/issues/11)) ([e3db76c](https://github.com/antmelekhin/ansible-role-docker/commit/e3db76cb2917f180a2af71bfb3bcf978d1456321))
+
 ## [1.4.1](https://github.com/antmelekhin/ansible-role-docker/compare/v1.4.0...v1.4.1) (2024-07-08)
 
 
