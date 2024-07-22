@@ -28,7 +28,7 @@
 
     - name: 'The Docker Engine version output'
       ansible.builtin.debug:
-        msg: '{{ __docker_version_check.stdout_lines[0] }}'
+        msg: 'The current Docker Engine version is {{ __docker_version_check.stdout_lines[0].split()[2] }}'
 
     - name: 'Run hello-world container'
       ansible.builtin.command:
