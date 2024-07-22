@@ -1,0 +1,30 @@
+---
+argument_specs:
+  main:
+    short_description: 'Docker Engine'
+    description:
+      - 'An Ansible role to install L(Docker Engine,https://docs.docker.com/engine/) from the Docker repository and configure it.'
+    author:
+      - 'Melekhin Anton'
+    options:
+      docker_version:
+        type: 'str'
+        description: 'The version of the Docker Engine package. By default, Docker Engine is installed with the latest available version.'
+      docker_repository_mirror:
+        type: 'str'
+        description: 'The Docker repository mirror.'
+        default: 'https://download.docker.com/linux'
+      docker_repository_release_channel:
+        type: 'str'
+        description: 'Docker repository release channel.'
+        default: 'stable'
+        choices:
+          - 'stable'
+          - 'test'
+      docker_daemon_options:
+        type: 'dict'
+        description: 'Docker Engine daemon configuration options as a dictionary.'
+      docker_users:
+        type: 'list'
+        elements: 'str'
+        description: 'A list of users who will be added to the docker group.'

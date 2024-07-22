@@ -13,6 +13,5 @@ _docker_conflicting_packages:
   - 'podman'
   - 'runc'
 
-_docker_repository_distribution: "{{ (ansible_distribution == 'Fedora') | ternary('fedora', 'centos') }}"
-_docker_repository_gpgkey_url: '{{ docker_repository_mirror_url }}/{{ _docker_repository_distribution }}/gpg'
-_docker_repository: '{{ docker_repository_mirror_url }}/{{ _docker_repository_distribution }}/$releasever/$basearch/{{ docker_repository_release_channel }}'
+_docker_repository_gpgkey_url: "{{ docker_repository_mirror }}/{{ (ansible_distribution == 'Fedora') | ternary('fedora', 'centos') }}/gpg"
+_docker_repository: "{{ docker_repository_mirror }}/{{ (ansible_distribution == 'Fedora') | ternary('fedora', 'centos') }}/$releasever/$basearch/{{ docker_repository_release_channel }}"
