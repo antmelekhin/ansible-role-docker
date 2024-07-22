@@ -28,7 +28,7 @@ Role Variables
 --------------
 
 - `docker_version` The version of the Docker Engine package. By default, Docker Engine is installed with the latest available version.
-- `docker_repository_mirror_url` The Docker repository mirror (default: `https://download.docker.com/linux`).
+- `docker_repository_mirror_url` The URL of Docker repository mirror (default: `https://download.docker.com/linux`).
 - `docker_repository_release_channel` Docker repository release channel. Available values are: `stable` (default), `test`.
 - `docker_daemon_options` Docker Engine daemon configuration options as a dictionary (default: `{}`).
 - `docker_users` A list of users who will be added to the docker group (default: `[]`).

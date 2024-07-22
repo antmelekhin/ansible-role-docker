@@ -10,9 +10,9 @@ argument_specs:
       docker_version:
         type: 'str'
         description: 'The version of the Docker Engine package. By default, Docker Engine is installed with the latest available version.'
-      docker_repository_mirror:
+      docker_repository_mirror_url:
         type: 'str'
-        description: 'The Docker repository mirror.'
+        description: 'The URL of Docker repository mirror.'
         default: 'https://download.docker.com/linux'
       docker_repository_release_channel:
         type: 'str'
