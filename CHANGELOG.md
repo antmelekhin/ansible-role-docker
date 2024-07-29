@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/antmelekhin/ansible-role-docker/compare/v1.5.1...v1.6.0) (2024-07-29)
+
+
+### Improvements
+
+* update vars ([#12](https://github.com/antmelekhin/ansible-role-docker/issues/12)) ([e6bf14f](https://github.com/antmelekhin/ansible-role-docker/commit/e6bf14fef00edcc0a8acb739a545010485e3a072))
+
 ## [1.5.1](https://github.com/antmelekhin/ansible-role-docker/compare/v1.5.0...v1.5.1) (2024-07-22)
 
 
