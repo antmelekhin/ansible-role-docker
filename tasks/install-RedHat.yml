@@ -26,11 +26,11 @@
       ansible.builtin.yum:
         name:
           - 'containerd.io'
-          - "docker-ce{{ ('-' + docker_version) if (docker_version | length) else '' }}"
-          - "docker-ce-cli{{ ('-' + docker_version) if (docker_version | length) else '' }}"
+          - "docker-ce{{ ('-' + docker_package_version) if (docker_package_version | length) else '' }}"
+          - "docker-ce-cli{{ ('-' + docker_package_version) if (docker_package_version | length) else '' }}"
           - 'docker-buildx-plugin'
           - 'docker-compose-plugin'
         allow_downgrade: true
         update_cache: true
-        state: "{{ 'present' if (docker_version | length) else 'latest' }}"
+        state: "{{ 'present' if (docker_package_version | length) else 'latest' }}"
       ignore_errors: '{{ ansible_check_mode }}'
