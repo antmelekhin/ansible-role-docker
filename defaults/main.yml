@@ -1,8 +1,10 @@
 ---
 # Install Docker Engine using the Docker repository
-docker_version: ''
+docker_package_version: ''
 docker_repository_mirror_url: 'https://download.docker.com/linux'
+# docker_repository_gpgkey_url: ''
 docker_repository_release_channel: 'stable'
+# docker_repository: ''
 
 # Configure Docker Engine daemon
 docker_daemon_options: {}

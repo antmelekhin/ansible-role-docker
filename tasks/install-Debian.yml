@@ -4,7 +4,13 @@
   block:
     - name: 'Debian | Remove the conflicting Docker Engine packages'
       ansible.builtin.apt:
-        name: '{{ _docker_conflicting_packages }}'
+        name:
+          - 'containerd'
+          - 'docker.io'
+          - 'docker-compose'
+          - 'docker-doc'
+          - 'podman-docker'
+          - 'runc'
         state: 'absent'
 
     - name: 'Debian | Ensure the dependencies are installed'
@@ -14,13 +20,14 @@
           - 'ca-certificates'
           - 'gnupg'
         update_cache: true
+        cache_valid_time: 3600
         state: 'present'
       check_mode: false
 
     - name: 'Debian | Add the Docker Engine repository GPG key'
       ansible.builtin.apt_key:
-        url: '{{ _docker_repository_gpgkey_url }}'
-        keyring: '{{ _docker_repository_gpgkey_keyring }}'
+        url: '{{ docker_repository_gpgkey_url | default(__docker_repository_gpgkey_url) }}'
+        keyring: '{{ __docker_repository_gpgkey_keyring }}'
         state: 'present'
 
     - name: 'Debian | Add the Docker Engine repository'
@@ -35,11 +42,11 @@
       ansible.builtin.apt:
         name:
           - 'containerd.io'
-          - "docker-ce{{ ('=' + docker_version) if (docker_version | length) else '' }}"
-          - "docker-ce-cli{{ ('=' + docker_version) if (docker_version | length) else '' }}"
+          - "docker-ce{{ ('=' + docker_package_version) if (docker_package_version | length) else '' }}"
+          - "docker-ce-cli{{ ('=' + docker_package_version) if (docker_package_version | length) else '' }}"
           - 'docker-buildx-plugin'
           - 'docker-compose-plugin'
         allow_downgrade: true
         update_cache: true
-        state: "{{ 'present' if (docker_version | length) else 'latest' }}"
+        state: "{{ 'present' if (docker_package_version | length) else 'latest' }}"
       ignore_errors: '{{ ansible_check_mode }}'

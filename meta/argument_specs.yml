@@ -7,13 +7,20 @@ argument_specs:
     author:
       - 'Melekhin Anton'
     options:
-      docker_version:
+      docker_package_version:
         type: 'str'
-        description: 'The version of the Docker Engine package. By default, Docker Engine is installed with the latest available version.'
+        description:
+          - 'The version of the Docker Engine package.'
+          - 'By default, Docker Engine is installed with the latest available version.'
       docker_repository_mirror_url:
         type: 'str'
-        description: 'The URL of Docker repository mirror.'
+        description: 'The Docker repository mirror.'
         default: 'https://download.docker.com/linux'
+      docker_repository_gpgkey_url:
+        type: 'str'
+        description:
+          - 'Specify where to fetch the Docker GPG key file from.'
+          - 'By default, the role uses the official Docker GPG key.'
       docker_repository_release_channel:
         type: 'str'
         description: 'Docker repository release channel.'
@@ -21,6 +28,9 @@ argument_specs:
         choices:
           - 'stable'
           - 'test'
+      docker_repository:
+        type: 'str'
+        description: 'Specify the Docker repository.'
       docker_daemon_options:
         type: 'dict'
         description: 'Docker Engine daemon configuration options as a dictionary.'
