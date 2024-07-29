@@ -4,7 +4,13 @@
   block:
     - name: 'Debian | Remove the conflicting Docker Engine packages'
       ansible.builtin.apt:
-        name: '{{ _docker_conflicting_packages }}'
+        name:
+          - 'containerd'
+          - 'docker.io'
+          - 'docker-compose'
+          - 'docker-doc'
+          - 'podman-docker'
+          - 'runc'
         state: 'absent'
 
     - name: 'Debian | Ensure the dependencies are installed'
@@ -20,8 +26,8 @@
 
     - name: 'Debian | Add the Docker Engine repository GPG key'
       ansible.builtin.apt_key:
-        url: '{{ _docker_repository_gpgkey_url }}'
-        keyring: '{{ _docker_repository_gpgkey_keyring }}'
+        url: '{{ docker_repository_gpgkey_url | default(__docker_repository_gpgkey_url) }}'
+        keyring: '{{ __docker_repository_gpgkey_keyring }}'
         state: 'present'
 
     - name: 'Debian | Add the Docker Engine repository'
