@@ -1,15 +1,15 @@
 ---
 # Default Docker GPG key
-__docker_repository_gpgkey_url_map:
+__docker_repository_gpgkey_url_dict:
   Debian: '{{ docker_repository_mirror_url }}/{{ ansible_distribution | lower }}/gpg'
   RedHat: "{{ docker_repository_mirror_url }}/{{ (ansible_distribution == 'Fedora') | ternary('fedora', 'centos') }}/gpg"
 
-__docker_repository_gpgkey_url: '{{ __docker_repository_gpgkey_url_map[ansible_os_family] }}'
+__docker_repository_gpgkey_url: '{{ __docker_repository_gpgkey_url_dict[ansible_os_family] }}'
 __docker_repository_gpgkey_keyring: '/usr/share/keyrings/docker-archive-keyring.gpg'
 
 # Default Docker repository
-__docker_repository_map:
+__docker_repository_dict:
   Debian: '{{ docker_repository_mirror_url }}/{{ ansible_distribution | lower }} {{ ansible_distribution_release }} {{ docker_repository_release_channel }}'
   RedHat: "{{ docker_repository_mirror_url }}/{{ (ansible_distribution == 'Fedora') | ternary('fedora', 'centos') }}/$releasever/$basearch/{{ docker_repository_release_channel }}"
 
-__docker_repository: '{{ __docker_repository_map[ansible_os_family] }}'
+__docker_repository: '{{ __docker_repository_dict[ansible_os_family] }}'
