@@ -26,7 +26,7 @@
 
     - name: 'Debian | Add the Docker Engine repository GPG key'
       ansible.builtin.apt_key:
-        url: '{{ docker_repository_gpgkey_url | default(__docker_repository_gpgkey_url) }}'
+        url: '{{ docker_repository_gpgkey_url }}'
         keyring: '{{ __docker_repository_gpgkey_keyring }}'
         state: 'present'
 

@@ -27,8 +27,9 @@ Requirements
 Role Variables
 --------------
 
-All variables which can be overridden are stored in `defaults/main.yml` file as well as in `meta/argument_specs.yml`.
-Similarly, descriptions and defaults for preset variables can be found in the `vars/` directory.
+All variables that can be overridden are stored in the [defaults/main.yml](defaults/main.yml) file.
+Please refer to the [meta/argument_specs.yml](meta/argument_specs.yml) file for a description of the available variables.
+Similarly, descriptions and defaults for preset variables can be found in the [vars/main.yml](vars/main.yml) file.
 
 Dependencies
 ------------

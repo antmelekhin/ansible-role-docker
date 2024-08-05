@@ -1,6 +1,0 @@
----
-# Default Docker GPG key
-__docker_repository_gpgkey_url: "{{ docker_repository_mirror_url }}/{{ (ansible_distribution == 'Fedora') | ternary('fedora', 'centos') }}/gpg"
-
-# Default Docker repository
-__docker_repository: "{{ docker_repository_mirror_url }}/{{ (ansible_distribution == 'Fedora') | ternary('fedora', 'centos') }}/$releasever/$basearch/{{ docker_repository_release_channel }}"
