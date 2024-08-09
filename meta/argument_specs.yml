@@ -25,10 +25,10 @@ argument_specs:
       docker_repository_release_channel:
         type: 'str'
         description: 'Docker repository release channel.'
-        default: 'stable'
         choices:
           - 'stable'
           - 'test'
+        default: 'stable'
       docker_repository:
         type: 'str'
         description: 'Specify the Docker repository.'
