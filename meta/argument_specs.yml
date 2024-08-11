@@ -21,16 +21,18 @@ argument_specs:
         description:
           - 'Specify where to fetch the Docker GPG key file from.'
           - 'By default, the role uses the official Docker GPG key.'
+        default: '{{ __docker_repository_gpgkey_url }}'
       docker_repository_release_channel:
         type: 'str'
         description: 'Docker repository release channel.'
-        default: 'stable'
         choices:
           - 'stable'
           - 'test'
+        default: 'stable'
       docker_repository:
         type: 'str'
         description: 'Specify the Docker repository.'
+        default: '{{ __docker_repository }}'
       docker_daemon_options:
         type: 'dict'
         description: 'Docker Engine daemon configuration options as a dictionary.'
@@ -38,3 +40,4 @@ argument_specs:
         type: 'list'
         elements: 'str'
         description: 'A list of users who will be added to the docker group.'
+        default: []
