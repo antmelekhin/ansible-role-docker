@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/antmelekhin/ansible-role-docker/compare/v1.6.0...v1.7.0) (2024-08-11)
+
+
+### Improvements
+
+* merge OS-specific variables into the `vars/main.yml` file ([#13](https://github.com/antmelekhin/ansible-role-docker/issues/13)) ([83c97a9](https://github.com/antmelekhin/ansible-role-docker/commit/83c97a9278e02ccdd94d83cedcbc7617d2451305))
+
 ## [1.6.0](https://github.com/antmelekhin/ansible-role-docker/compare/v1.5.1...v1.6.0) (2024-07-29)
 
 
