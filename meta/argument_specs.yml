@@ -40,3 +40,4 @@ argument_specs:
         type: 'list'
         elements: 'str'
         description: 'A list of users who will be added to the docker group.'
+        default: []
