@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.7.2](https://github.com/antmelekhin/ansible-role-docker/compare/v1.7.1...v1.7.2) (2024-10-30)
+
+
+### Code Refactoring
+
+* update `vars/main.yml` file ([226afde](https://github.com/antmelekhin/ansible-role-docker/commit/226afdea2bc3e7bc4cc9ae84ae648ea8cbc42149))
+
+
+### Continuous Integration
+
+* use `ubuntu-22.04` instead of `ubuntu-latest` ([bc46291](https://github.com/antmelekhin/ansible-role-docker/commit/bc46291402df84267c1a1e49bbc3465d4eec4080))
+
+
+### Styles
+
+* minor fixes ([8af0ead](https://github.com/antmelekhin/ansible-role-docker/commit/8af0ead9115164350ecb0c56ce20e367db05ae11))
+
 ## [1.7.1](https://github.com/antmelekhin/ansible-role-docker/compare/v1.7.0...v1.7.1) (2024-08-11)
 
 
