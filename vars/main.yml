@@ -9,7 +9,7 @@ __docker_repository_gpgkey_keyring: '/usr/share/keyrings/docker-archive-keyring.
 
 # Default Docker repository
 __docker_repository_dict:
-  Debian: '{{ docker_repository_mirror_url }}/{{ ansible_distribution | lower }} {{ ansible_distribution_release }} {{ docker_repository_release_channel }}'
+  Debian: 'deb [signed-by={{ __docker_repository_gpgkey_keyring }}] {{ docker_repository_mirror_url }}/{{ ansible_distribution | lower }} {{ ansible_distribution_release }} {{ docker_repository_release_channel }}'
   RedHat: "{{ docker_repository_mirror_url }}/{{ (ansible_distribution == 'Fedora') | ternary('fedora', 'centos') }}/$releasever/$basearch/{{ docker_repository_release_channel }}"
 
 __docker_repository: '{{ __docker_repository_dict[ansible_os_family] }}'
