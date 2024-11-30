@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.3](https://github.com/antmelekhin/ansible-role-docker/compare/v1.7.2...v1.7.3) (2024-11-30)
+
+
+### Documentation
+
+* **README:** updated requirements ([c77555c](https://github.com/antmelekhin/ansible-role-docker/commit/c77555c8640923f150f88469b55e2dec88c507dd))
+
 ## [1.7.2](https://github.com/antmelekhin/ansible-role-docker/compare/v1.7.1...v1.7.2) (2024-10-30)
 
 
