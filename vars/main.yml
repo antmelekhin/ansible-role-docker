@@ -13,3 +13,11 @@ __docker_repository_dict:
   RedHat: "{{ docker_repository_mirror_url }}/{{ (ansible_distribution == 'Fedora') | ternary('fedora', 'centos') }}/$releasever/$basearch/{{ docker_repository_release_channel }}"
 
 __docker_repository: '{{ __docker_repository_dict[ansible_os_family] }}'
+
+# Docker packages
+__docker_packages:
+  - 'containerd.io'
+  - "docker-ce{{ ('-' + docker_package_version) if (docker_package_version | length) else '' }}"
+  - "docker-ce-cli{{ ('-' + docker_package_version) if (docker_package_version | length) else '' }}"
+  - 'docker-buildx-plugin'
+  - 'docker-compose-plugin'
