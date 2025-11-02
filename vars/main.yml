@@ -1,4 +1,29 @@
 ---
+# Docker conflicting packages
+__docker_conflicting_packages_dict:
+  Debian:
+    - 'containerd'
+    - 'docker.io'
+    - 'docker-compose'
+    - 'docker-doc'
+    - 'podman-docker'
+    - 'runc'
+  RedHat:
+    - 'docker'
+    - 'docker-client'
+    - 'docker-client-latest'
+    - 'docker-common'
+    - 'docker-engine'
+    - 'docker-engine-selinux.noarch'
+    - 'docker-latest'
+    - 'docker-latest-logrotate'
+    - 'docker-logrotate'
+    - 'docker-selinux.noarch'
+    - 'podman'
+    - 'runc'
+
+__docker_conflicting_packages: '{{ __docker_conflicting_packages_dict[ansible_os_family] }}'
+
 # Default Docker GPG key
 __docker_repository_gpgkey_url_dict:
   Debian: '{{ docker_repository_mirror_url }}/{{ ansible_distribution | lower }}/gpg'

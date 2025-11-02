@@ -4,19 +4,7 @@
   block:
     - name: 'RedHat | Remove the conflicting Docker Engine packages'
       ansible.builtin.yum:
-        name:
-          - 'docker'
-          - 'docker-client'
-          - 'docker-client-latest'
-          - 'docker-common'
-          - 'docker-engine'
-          - 'docker-engine-selinux.noarch'
-          - 'docker-latest'
-          - 'docker-latest-logrotate'
-          - 'docker-logrotate'
-          - 'docker-selinux.noarch'
-          - 'podman'
-          - 'runc'
+        name: '{{ __docker_conflicting_packages }}'
         autoremove: true
         state: 'absent'
 
