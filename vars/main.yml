@@ -15,9 +15,18 @@ __docker_repository_dict:
 __docker_repository: '{{ __docker_repository_dict[ansible_os_family] }}'
 
 # Docker packages
-__docker_packages:
-  - 'containerd.io'
-  - "docker-ce{{ ('-' + docker_package_version) if (docker_package_version | length) else '' }}"
-  - "docker-ce-cli{{ ('-' + docker_package_version) if (docker_package_version | length) else '' }}"
-  - 'docker-buildx-plugin'
-  - 'docker-compose-plugin'
+__docker_packages_dict:
+  Debian:
+    - 'containerd.io'
+    - "docker-ce{{ ('=' + docker_package_version) if (docker_package_version | length) else '' }}"
+    - "docker-ce-cli{{ ('=' + docker_package_version) if (docker_package_version | length) else '' }}"
+    - 'docker-buildx-plugin'
+    - 'docker-compose-plugin'
+  RedHat:
+    - 'containerd.io'
+    - "docker-ce{{ ('-' + docker_package_version) if (docker_package_version | length) else '' }}"
+    - "docker-ce-cli{{ ('-' + docker_package_version) if (docker_package_version | length) else '' }}"
+    - 'docker-buildx-plugin'
+    - 'docker-compose-plugin'
+
+__docker_packages: '{{ __docker_packages_dict[ansible_os_family] }}'
