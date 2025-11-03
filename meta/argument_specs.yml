@@ -6,6 +6,18 @@ argument_specs:
       - 'An Ansible role to install L(Docker Engine,https://docs.docker.com/engine/) from the Docker repository and configure it.'
     author: 'Melekhin Anton'
     options:
+      docker_setup:
+        type: 'str'
+        description:
+          - 'Specify whether you want to install, upgrade to the latest version, or remove Docker Engine.'
+          - "Using 'install' will install the latest version of Docker Engine on a fresh install."
+          - "Using 'upgrade' will upgrade Docker Engine to the latest version of on every playbook execution."
+          - "Using 'uninstall' will remove Docker Engine from your system."
+        choices:
+          - 'install'
+          - 'upgrade'
+          - 'uninstall'
+        default: 'install'
       docker_package_version:
         type: 'str'
         description:

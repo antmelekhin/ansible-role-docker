@@ -1,0 +1,17 @@
+---
+- name: 'Verify'
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: 'Check if Docker Engine is installed'
+      ansible.builtin.package:
+        name:
+          - 'containerd.io'
+          - 'docker-ce'
+          - 'docker-ce-cli'
+          - 'docker-buildx-plugin'
+          - 'docker-compose-plugin'
+        state: 'absent'
+      register: __docker_is_installed
+      failed_when: __docker_is_installed is changed
+      check_mode: true

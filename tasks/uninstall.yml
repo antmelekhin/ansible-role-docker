@@ -1,0 +1,42 @@
+---
+- name: 'Uninstall Docker Engine'
+  become: true
+  block:
+    - name: 'Debian | Uninstall Docker Engine'
+      when: ansible_os_family == 'Debian'
+      block:
+        - name: 'Debian | Uninstall the Docker Engine packages'
+          ansible.builtin.apt:
+            name: '{{ __docker_packages }}'
+            autoremove: true
+            purge: true
+            state: 'absent'
+
+        - name: 'Debian | Remove the Docker Engine repository'
+          ansible.builtin.file:
+            path: '/etc/apt/sources.list.d/docker.list'
+            state: 'absent'
+
+    - name: 'RedHat | Uninstall Docker Engine'
+      when: ansible_os_family == 'RedHat'
+      block:
+        - name: 'RedHat | Uninstall the Docker Engine packages'
+          ansible.builtin.yum:
+            name: '{{ __docker_packages }}'
+            autoremove: true
+            state: 'absent'
+
+        - name: 'RedHat | Remove the Docker Engine repository'
+          ansible.builtin.file:
+            path: '/etc/yum.repos.d/docker.repo'
+            state: 'absent'
+
+    - name: 'Remove a Docker Engine configuration directory'
+      ansible.builtin.file:
+        dest: '/etc/docker'
+        state: 'absent'
+
+    - name: 'Remove a Docker Engine group'
+      ansible.builtin.group:
+        name: 'docker'
+        state: 'absent'

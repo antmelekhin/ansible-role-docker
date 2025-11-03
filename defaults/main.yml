@@ -1,4 +1,6 @@
 ---
+docker_setup: 'install'
+
 # Install Docker Engine using the Docker repository
 docker_package_version: ''
 docker_repository_mirror_url: 'https://download.docker.com/linux'
