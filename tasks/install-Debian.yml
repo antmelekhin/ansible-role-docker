@@ -4,7 +4,14 @@
   block:
     - name: 'Debian | Remove the conflicting Docker Engine packages'
       ansible.builtin.apt:
-        name: '{{ __docker_conflicting_packages }}'
+        name:
+          - 'containerd'
+          - 'docker.io'
+          - 'docker-compose'
+          - 'docker-compose-v2'
+          - 'docker-doc'
+          - 'podman-docker'
+          - 'runc'
         autoremove: true
         purge: true
         state: 'absent'
