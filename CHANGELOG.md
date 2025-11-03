@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.0](https://github.com/antmelekhin/ansible-role-docker/compare/v1.7.3...v1.8.0) (2025-11-03)
+
+
+### Features
+
+* add `docker_setup` variable ([#14](https://github.com/antmelekhin/ansible-role-docker/issues/14)) ([29674fc](https://github.com/antmelekhin/ansible-role-docker/commit/29674fcf320a9eb04025f5afc4864b7cfc2110a8))
+
 ## [1.7.3](https://github.com/antmelekhin/ansible-role-docker/compare/v1.7.2...v1.7.3) (2024-11-30)
 
 
