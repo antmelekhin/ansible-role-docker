@@ -9,7 +9,7 @@ argument_specs:
       docker_setup:
         type: 'str'
         description:
-          - 'Specify whether you want to install Docker Engine, upgrade to the latest version, or remove Docker Engine.'
+          - 'Specify whether you want to install, upgrade to the latest version, or remove Docker Engine.'
           - "Using 'install' will install the latest version of Docker Engine on a fresh install."
           - "Using 'upgrade' will upgrade Docker Engine to the latest version of on every playbook execution."
           - "Using 'uninstall' will remove Docker Engine from your system."
