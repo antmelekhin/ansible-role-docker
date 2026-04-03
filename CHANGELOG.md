@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.1](https://github.com/antmelekhin/ansible-role-docker/compare/v1.8.0...v1.8.1) (2026-04-03)
+
+
+### Fixes
+
+* use newer style ansible facts ([49c7233](https://github.com/antmelekhin/ansible-role-docker/commit/49c723339c8eb776a584d8788f50fe1216431fda))
+
 ## [1.8.0](https://github.com/antmelekhin/ansible-role-docker/compare/v1.7.3...v1.8.0) (2025-11-03)
 
 
