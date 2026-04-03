@@ -24,7 +24,7 @@
         group: 'root'
         mode: 0644
       notify: 'Restart Docker'
-      when: docker_daemon_options.keys() | length
+      when: docker_daemon_options.keys() | length > 0
 
     - name: 'Ensure docker users are added to the docker group'
       ansible.builtin.user:

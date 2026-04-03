@@ -1,11 +1,11 @@
 ---
 - name: 'Install Docker Engine'
-  ansible.builtin.include_tasks: 'install-{{ ansible_os_family }}.yml'
-  when: docker_setup in ['install','upgrade']
+  ansible.builtin.include_tasks: "install-{{ ansible_facts['os_family'] }}.yml"
+  when: docker_setup in ['install', 'upgrade']
 
 - name: 'Configure Docker Engine'
   ansible.builtin.import_tasks: 'configure.yml'
-  when: docker_setup in ['install','upgrade']
+  when: docker_setup in ['install', 'upgrade']
 
 - name: 'Uninstall Docker Engine'
   ansible.builtin.import_tasks: 'uninstall.yml'

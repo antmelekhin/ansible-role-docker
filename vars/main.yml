@@ -1,25 +1,25 @@
 ---
 # Default Docker GPG key
 __docker_repository_gpgkey_url_dict:
-  Debian: '{{ docker_repository_mirror_url }}/{{ ansible_distribution | lower }}/gpg'
-  RedHat: "{{ docker_repository_mirror_url }}/{{ (ansible_distribution == 'Fedora') | ternary('fedora', 'centos') }}/gpg"
+  Debian: "{{ docker_repository_mirror_url }}/{{ ansible_facts['distribution'] | lower }}/gpg"
+  RedHat: "{{ docker_repository_mirror_url }}/{{ (ansible_facts['distribution'] == 'Fedora') | ternary('fedora', 'centos') }}/gpg"
 
-__docker_repository_gpgkey_url: '{{ __docker_repository_gpgkey_url_dict[ansible_os_family] }}'
+__docker_repository_gpgkey_url: "{{ __docker_repository_gpgkey_url_dict[ansible_facts['os_family']] }}"
 __docker_repository_gpgkey_keyring: '/usr/share/keyrings/docker-archive-keyring.gpg'
 
 # Default Docker repository
 __docker_repository_dict:
-  Debian: 'deb [signed-by={{ __docker_repository_gpgkey_keyring }}] {{ docker_repository_mirror_url }}/{{ ansible_distribution | lower }} {{ ansible_distribution_release }} {{ docker_repository_release_channel }}'
-  RedHat: "{{ docker_repository_mirror_url }}/{{ (ansible_distribution == 'Fedora') | ternary('fedora', 'centos') }}/$releasever/$basearch/{{ docker_repository_release_channel }}"
+  Debian: "deb [signed-by={{ __docker_repository_gpgkey_keyring }}] {{ docker_repository_mirror_url }}/{{ ansible_facts['distribution'] | lower }} {{ ansible_facts['distribution_release'] }} {{ docker_repository_release_channel }}"
+  RedHat: "{{ docker_repository_mirror_url }}/{{ (ansible_facts['distribution'] == 'Fedora') | ternary('fedora', 'centos') }}/$releasever/$basearch/{{ docker_repository_release_channel }}"
 
-__docker_repository: '{{ __docker_repository_dict[ansible_os_family] }}'
+__docker_repository: "{{ __docker_repository_dict[ansible_facts['os_family']] }}"
 
 # Docker packages
-__docker_version_separator: "{{ (ansible_pkg_mgr == 'apt') | ternary('=', '-') }}"
+__docker_version_separator: "{{ (ansible_facts['pkg_mgr'] == 'apt') | ternary('=', '-') }}"
 
 __docker_packages:
   - 'containerd.io'
-  - "docker-ce{{ (__docker_version_separator + docker_package_version) if (docker_package_version | length) else '' }}"
-  - "docker-ce-cli{{ (__docker_version_separator + docker_package_version) if (docker_package_version | length) else '' }}"
+  - "docker-ce{{ (__docker_version_separator + docker_package_version) if (docker_package_version | length > 0) else '' }}"
+  - "docker-ce-cli{{ (__docker_version_separator + docker_package_version) if (docker_package_version | length > 0) else '' }}"
   - 'docker-buildx-plugin'
   - 'docker-compose-plugin'
