@@ -4,9 +4,9 @@
   when: docker_setup in ['install', 'upgrade']
 
 - name: 'Configure Docker Engine'
-  ansible.builtin.import_tasks: 'configure.yml'
+  ansible.builtin.include_tasks: 'configure.yml'
   when: docker_setup in ['install', 'upgrade']
 
 - name: 'Uninstall Docker Engine'
-  ansible.builtin.import_tasks: 'uninstall.yml'
+  ansible.builtin.include_tasks: 'uninstall.yml'
   when: docker_setup in ['uninstall']
