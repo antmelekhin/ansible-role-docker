@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.8.2](https://github.com/antmelekhin/ansible-role-docker/compare/v1.8.1...v1.8.2) (2026-04-20)
+
+
+### Code Refactoring
+
+* update uninstall tasks ([5ccd634](https://github.com/antmelekhin/ansible-role-docker/commit/5ccd63459fedc36e99428fd45b339fd87e38f042))
+
+
+### Fixes
+
+* change import_tasks to include_tasks for hidding skipped tasks ([a9186e3](https://github.com/antmelekhin/ansible-role-docker/commit/a9186e303047aa0c7e7163cc2588ef3f4e44356b))
+
 ## [1.8.1](https://github.com/antmelekhin/ansible-role-docker/compare/v1.8.0...v1.8.1) (2026-04-03)
 
 
