@@ -22,7 +22,7 @@
         dest: '/etc/docker/daemon.json'
         owner: 'root'
         group: 'root'
-        mode: 0644
+        mode: '0644'
       notify: 'Restart Docker'
       when: docker_daemon_options.keys() | length > 0
 
